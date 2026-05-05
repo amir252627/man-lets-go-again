@@ -15,6 +15,11 @@ jobs:
 
       - name: Pull, Tag and Push
         run: |
-          docker pull ghcr.io/mueez-p/3x-ui:latest
-          docker tag ghcr.io/mueez-p/3x-ui:latest ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
+          # کشیدن ایمیج از داکر هاب (بسیار پایدارتر)
+          docker pull sanaei/3x-ui:latest
+          
+          # تغییر نام به نام کاربری داکر شما
+          docker tag sanaei/3x-ui:latest ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
+          
+          # آپلود در اکانت شما
           docker push ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
