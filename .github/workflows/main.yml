@@ -19,9 +19,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Pull, Tag and Push
         run: |
-          docker pull ghcr.io/mueez/3x-ui:latest
-          docker tag ghcr.io/mueez/3x-ui:latest ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
+          docker pull ghcr.io/mueez/3x-ui:v2.4.1
+          docker tag ghcr.io/mueez/3x-ui:v2.4.1 ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
