@@ -22,6 +22,6 @@ jobs:
 
       - name: Pull, Tag and Push
         run: |
-          docker pull ghcr.io/sanaei/3x-ui:latest
-          docker tag ghcr.io/sanaei/3x-ui:latest ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
+          docker pull ghcr.io/mueez/3x-ui:latest
+          docker tag ghcr.io/mueez/3x-ui:latest ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/lib-core:latest
